@@ -11,12 +11,11 @@ public class MoveIntoDirectionTest {
 		View view = mock(View.class);
 		Model model = mock(Model.class);
 		Controller controller = new Controller(view, model);
-		DiggingPoint position = new DiggingPoint(50, 75);
-		when(model.calculateNewDiggingPoint(TrianglePointNr.TWO)).thenReturn(position);
+		when(model.calculateNewDiggingPoint(TrianglePointNr.TWO)).thenReturn(new DiggingPoint(50, 75));
 
 		controller.onMove(TrianglePointNr.TWO);
 
-		verify(view).displayNewPosition(position);
+		verify(view).displayNewPosition(new DiggingPoint(50, 75));
 	}
 
 	public interface View {
