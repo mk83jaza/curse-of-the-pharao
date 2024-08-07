@@ -1,10 +1,17 @@
+import java.util.Random;
+
 public class Main {
 	public static void main(String[] args) {
-		Triangle triangle = new Triangle(new Point(0, 0), new Point(50, 100), new Point(100, 0));
-		Point startingPoint = new Point(50, 50);
+		Triangle triangle = new Triangle(new Point(0, 0), new Point(500, 866), new Point(1000, 0));
+		Point startingPoint = new Point(250, 250);
 		Model model = new RoyalTriangleModel(triangle, startingPoint);
 		View view = new GUIView(triangle, startingPoint);
 		Controller controller = new Controller(view, model);
-		controller.onMove(Direction.TWO);
+
+		Random rand = new Random();
+		for (int i = 0; i < 1000000; i++) {
+			Direction randomDirection = Direction.values()[rand.nextInt(3)];
+			controller.onMove(randomDirection);
+		}
 	}
 }

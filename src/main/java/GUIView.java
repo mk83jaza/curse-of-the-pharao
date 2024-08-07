@@ -18,13 +18,14 @@ public class GUIView implements View {
 	private void displayStart() {
 		JFrame frame = new JFrame();
 		frame.setTitle("The Curse of the Pharaoh");
-		frame.setSize(500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.setResizable(false);
 
 		panel = new DrawPanel();
 		frame.add(panel);
 		frame.pack();
+		frame.setLocationRelativeTo(null);
 	}
 
 	@Override
@@ -40,7 +41,7 @@ public class GUIView implements View {
 
 		@Override
 		public Dimension getPreferredSize() {
-			return new Dimension(500, 500);
+			return new Dimension(1003, 869);
 		}
 
 		@Override
