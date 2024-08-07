@@ -13,6 +13,12 @@ public class RoyalTriangleModel implements Model {
 
 	@Override
 	public Point calculateNewDiggingPoint(TrianglePointNr trianglePointNr) {
-		return diggingPoint.calculatePointInBetween(trianglePoint2);
+		if (trianglePointNr == TrianglePointNr.ONE) {
+			return diggingPoint.calculatePointInBetween(trianglePoint1);
+		} else if (trianglePointNr == TrianglePointNr.TWO) {
+			return diggingPoint.calculatePointInBetween(trianglePoint2);
+		} else {
+			return diggingPoint.calculatePointInBetween(trianglePoint3);
+		}
 	}
 }
