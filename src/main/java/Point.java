@@ -1,10 +1,10 @@
 import java.util.Objects;
 
-public class DiggingPoint {
+public class Point {
 	private final int x;
 	private final int y;
 
-	public DiggingPoint(int x, int y) {
+	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -13,7 +13,7 @@ public class DiggingPoint {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		DiggingPoint that = (DiggingPoint) o;
+		Point that = (Point) o;
 		return x == that.x && y == that.y;
 	}
 
