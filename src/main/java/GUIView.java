@@ -50,16 +50,16 @@ public class GUIView implements View {
 
 		private void drawTriangle(Graphics g) {
 			g.drawLine(
-					(int) triangle.trianglePoint1().getX(), (int) triangle.trianglePoint1().getY(),
-					(int) triangle.trianglePoint2().getX(), (int) triangle.trianglePoint2().getY()
+					(int) triangle.point1().getX(), (int) triangle.point1().getY(),
+					(int) triangle.point2().getX(), (int) triangle.point2().getY()
 			);
 			g.drawLine(
-					(int) triangle.trianglePoint2().getX(), (int) triangle.trianglePoint2().getY(),
-					(int) triangle.trianglePoint3().getX(), (int) triangle.trianglePoint3().getY()
+					(int) triangle.point2().getX(), (int) triangle.point2().getY(),
+					(int) triangle.point3().getX(), (int) triangle.point3().getY()
 			);
 			g.drawLine(
-					(int) triangle.trianglePoint3().getX(), (int) triangle.trianglePoint3().getY(),
-					(int) triangle.trianglePoint1().getX(), (int) triangle.trianglePoint1().getY()
+					(int) triangle.point3().getX(), (int) triangle.point3().getY(),
+					(int) triangle.point1().getX(), (int) triangle.point1().getY()
 			);
 		}
 	}
