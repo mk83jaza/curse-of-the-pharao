@@ -67,7 +67,10 @@ public class GUIView implements View {
 		}
 
 		private void drawDiggingPoints(Graphics g) {
-			diggingPoints.forEach(point -> g.fillRect((int) point.getX(), (int) point.getY(), 1, 1));
+			for (int i = 0; i < diggingPoints.size(); i++) {
+				Point point = diggingPoints.get(i);
+				g.fillRect((int) point.getX(), (int) point.getY(), 1, 1);
+			}
 		}
 	}
 }
