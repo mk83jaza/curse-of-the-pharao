@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PointTest {
 	@Test
@@ -17,12 +16,14 @@ class PointTest {
 
 	@Test
 	void equalsTypeChecking() {
-		assertNotEquals(new Point(4, 1), "Not the same class");
+		assertNotEquals("Not the same class", new Point(4, 1));
 	}
 
 	@Test
 	void equalsTrue() {
-		assertEquals(new Point(5, 6), new Point(5, 6));
+		Point point1 = new Point(5, 6);
+		Point point2 = new Point(5, 6);
+		assertTrue(point1.equals(point2) && point2.equals(point1));
 	}
 
 	@Test
