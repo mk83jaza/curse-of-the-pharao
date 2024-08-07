@@ -4,10 +4,10 @@ public class RoyalTriangleModel implements Model {
 	private final Point trianglePoint3;
 	private Point diggingPoint;
 
-	public RoyalTriangleModel(Point trianglePoint1, Point trianglePoint2, Point trianglePoint3, Point diggingPoint) {
-		this.trianglePoint1 = trianglePoint1;
-		this.trianglePoint2 = trianglePoint2;
-		this.trianglePoint3 = trianglePoint3;
+	public RoyalTriangleModel(Triangle triangle, Point diggingPoint) {
+		this.trianglePoint1 = triangle.trianglePoint1();
+		this.trianglePoint2 = triangle.trianglePoint2();
+		this.trianglePoint3 = triangle.trianglePoint3();
 		this.diggingPoint = diggingPoint;
 	}
 
