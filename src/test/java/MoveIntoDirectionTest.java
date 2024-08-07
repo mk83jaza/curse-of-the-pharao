@@ -11,9 +11,9 @@ public class MoveIntoDirectionTest {
 		View view = mock(View.class);
 		Model model = mock(Model.class);
 		Controller controller = new Controller(view, model);
-		when(model.calculateNewDiggingPoint(TrianglePointNr.TWO)).thenReturn(new Point(50, 75));
+		when(model.move(Direction.TWO)).thenReturn(new Point(50, 75));
 
-		controller.onMove(TrianglePointNr.TWO);
+		controller.onMove(Direction.TWO);
 
 		verify(view).displayNewPosition(new Point(50, 75));
 	}
@@ -31,8 +31,8 @@ public class MoveIntoDirectionTest {
 			this.model = model;
 		}
 
-		public void onMove(TrianglePointNr trianglePointNr) {
-			Point point = model.calculateNewDiggingPoint(trianglePointNr);
+		public void onMove(Direction direction) {
+			Point point = model.move(direction);
 			view.displayNewPosition(point);
 		}
 	}

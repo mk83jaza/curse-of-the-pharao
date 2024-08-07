@@ -12,10 +12,10 @@ public class RoyalTriangleModel implements Model {
 	}
 
 	@Override
-	public Point calculateNewDiggingPoint(TrianglePointNr trianglePointNr) {
-		if (trianglePointNr == TrianglePointNr.ONE) {
+	public Point move(Direction direction) {
+		if (direction == Direction.ONE) {
 			return diggingPoint.calculatePointInBetween(trianglePoint1);
-		} else if (trianglePointNr == TrianglePointNr.TWO) {
+		} else if (direction == Direction.TWO) {
 			return diggingPoint.calculatePointInBetween(trianglePoint2);
 		} else {
 			return diggingPoint.calculatePointInBetween(trianglePoint3);

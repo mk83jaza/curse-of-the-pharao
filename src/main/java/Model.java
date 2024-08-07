@@ -1,3 +1,3 @@
 public interface Model {
-	Point calculateNewDiggingPoint(TrianglePointNr trianglePointNr);
+	Point move(Direction direction);
 }
