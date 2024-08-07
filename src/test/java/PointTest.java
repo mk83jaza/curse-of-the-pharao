@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -43,7 +42,7 @@ class PointTest {
 
 	@Test
 	void toStringMethod() {
-		assertEquals("Point{x=5, y=6}", new Point(5, 6).toString());
+		assertEquals("Point{x=5.0, y=6.0}", new Point(5, 6).toString());
 	}
 
 	@Test
