@@ -13,6 +13,6 @@ public class RoyalTriangleModel implements Model {
 
 	@Override
 	public Point calculateNewDiggingPoint(TrianglePointNr trianglePointNr) {
-		return new Point(50, 75);
+		return diggingPoint.calculatePointInBetween(trianglePoint2);
 	}
 }
