@@ -1,4 +1,4 @@
-record Triangle(Point trianglePoint1, Point trianglePoint2, Point trianglePoint3) {
+public record Triangle(Point trianglePoint1, Point trianglePoint2, Point trianglePoint3) {
 	public Point trianglePointOf(Direction direction) {
 		switch (direction) {
 			case ONE -> {
