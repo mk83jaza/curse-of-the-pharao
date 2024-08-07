@@ -53,23 +53,23 @@ public class GUIView implements View {
 
 		private void drawTriangle(Graphics g) {
 			g.drawLine(
-					(int) triangle.point1().getX(), (int) triangle.point1().getY(),
-					(int) triangle.point2().getX(), (int) triangle.point2().getY()
+					(int) triangle.point1().x(), (int) triangle.point1().y(),
+					(int) triangle.point2().x(), (int) triangle.point2().y()
 			);
 			g.drawLine(
-					(int) triangle.point2().getX(), (int) triangle.point2().getY(),
-					(int) triangle.point3().getX(), (int) triangle.point3().getY()
+					(int) triangle.point2().x(), (int) triangle.point2().y(),
+					(int) triangle.point3().x(), (int) triangle.point3().y()
 			);
 			g.drawLine(
-					(int) triangle.point3().getX(), (int) triangle.point3().getY(),
-					(int) triangle.point1().getX(), (int) triangle.point1().getY()
+					(int) triangle.point3().x(), (int) triangle.point3().y(),
+					(int) triangle.point1().x(), (int) triangle.point1().y()
 			);
 		}
 
 		private void drawDiggingPoints(Graphics g) {
 			for (int i = 0; i < diggingPoints.size(); i++) {
 				Point point = diggingPoints.get(i);
-				g.fillRect((int) point.getX(), (int) point.getY(), 1, 1);
+				g.fillRect((int) point.x(), (int) point.y(), 1, 1);
 			}
 		}
 	}
