@@ -37,4 +37,12 @@ public class Point {
 				", y=" + y +
 				'}';
 	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
 }
