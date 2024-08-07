@@ -9,6 +9,13 @@ public class Point {
 		this.y = y;
 	}
 
+	public Point calculatePointInBetween(Point other) {
+		return new Point(
+				this.y + other.x / 2,
+				this.y + other.y / 2
+		);
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -20,5 +27,13 @@ public class Point {
 	@Override
 	public int hashCode() {
 		return Objects.hash(x, y);
+	}
+
+	@Override
+	public String toString() {
+		return "Point{" +
+				"x=" + x +
+				", y=" + y +
+				'}';
 	}
 }
