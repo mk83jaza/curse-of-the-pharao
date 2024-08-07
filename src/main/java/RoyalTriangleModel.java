@@ -2,7 +2,7 @@ public class RoyalTriangleModel implements Model {
 	private final Point trianglePoint1;
 	private final Point trianglePoint2;
 	private final Point trianglePoint3;
-	private final Point diggingPoint;
+	private Point diggingPoint;
 
 	public RoyalTriangleModel(Point trianglePoint1, Point trianglePoint2, Point trianglePoint3, Point diggingPoint) {
 		this.trianglePoint1 = trianglePoint1;
@@ -13,12 +13,15 @@ public class RoyalTriangleModel implements Model {
 
 	@Override
 	public Point move(Direction direction) {
+		Point result;
 		if (direction == Direction.ONE) {
-			return diggingPoint.calculatePointInBetween(trianglePoint1);
+			result = diggingPoint.calculatePointInBetween(trianglePoint1);
 		} else if (direction == Direction.TWO) {
-			return diggingPoint.calculatePointInBetween(trianglePoint2);
+			result = diggingPoint.calculatePointInBetween(trianglePoint2);
 		} else {
-			return diggingPoint.calculatePointInBetween(trianglePoint3);
+			result = diggingPoint.calculatePointInBetween(trianglePoint3);
 		}
+		diggingPoint = result;
+		return result;
 	}
 }
