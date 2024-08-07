@@ -22,10 +22,6 @@ public class MoveIntoDirectionTest {
 		void displayNewPosition(Point position);
 	}
 
-	public interface Model {
-		Point calculateNewDiggingPoint(TrianglePointNr trianglePointNr);
-	}
-
 	public static class Controller {
 		private final View view;
 		private final Model model;
