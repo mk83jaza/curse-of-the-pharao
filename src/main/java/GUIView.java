@@ -41,10 +41,14 @@ public class GUIView implements View {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			drawInitialStart(g);
+			drawTriangle(g);
+			g.fillRect(
+					(int) startingPoint.getX(), (int) startingPoint.getY(),
+					1, 1
+			);
 		}
 
-		private void drawInitialStart(Graphics g) {
+		private void drawTriangle(Graphics g) {
 			g.drawLine(
 					(int) triangle.trianglePoint1().getX(), (int) triangle.trianglePoint1().getY(),
 					(int) triangle.trianglePoint2().getX(), (int) triangle.trianglePoint2().getY()
@@ -56,10 +60,6 @@ public class GUIView implements View {
 			g.drawLine(
 					(int) triangle.trianglePoint3().getX(), (int) triangle.trianglePoint3().getY(),
 					(int) triangle.trianglePoint1().getX(), (int) triangle.trianglePoint1().getY()
-			);
-			g.fillRect(
-					(int) startingPoint.getX(), (int) startingPoint.getY(),
-					1, 1
 			);
 		}
 	}
