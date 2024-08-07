@@ -5,6 +5,7 @@ public class Point {
 	private final double y;
 
 	public Point(double x, double y) {
+		if (x < 0 || y < 0) throw new IllegalArgumentException("No negative values or null allowed");
 		this.x = x;
 		this.y = y;
 	}

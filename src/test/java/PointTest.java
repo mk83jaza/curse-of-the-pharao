@@ -58,4 +58,14 @@ class PointTest {
 		Point point2 = new Point(49.8, 64.9);
 		assertEquals(point1.calculatePointInBetween(point2), point2.calculatePointInBetween(point1));
 	}
+
+	@Test
+	void negativePoint() {
+		IllegalArgumentException exception1 = assertThrows(IllegalArgumentException.class, () -> new Point(5, -1));
+		IllegalArgumentException exception2 = assertThrows(IllegalArgumentException.class, () -> new Point(-5, 1));
+		IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> new Point(-5, -1));
+		assertEquals("No negative values or null allowed", exception1.getMessage());
+		assertEquals("No negative values or null allowed", exception2.getMessage());
+		assertEquals("No negative values or null allowed", exception3.getMessage());
+	}
 }
