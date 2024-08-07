@@ -50,4 +50,11 @@ class PointTest {
 		Point point = new Point(50, 50);
 		assertEquals(new Point(50, 75), point.calculatePointInBetween(new Point(50, 100)));
 	}
+
+	@Test
+	void twoPointsCalculateSamePointInBetween() {
+		Point point1 = new Point(3.6, 7.8);
+		Point point2 = new Point(49.8, 64.9);
+		assertEquals(point1.calculatePointInBetween(point2), point2.calculatePointInBetween(point1));
+	}
 }
