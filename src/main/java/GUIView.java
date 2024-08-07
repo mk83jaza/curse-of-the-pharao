@@ -1,13 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GUIView implements View {
 	private final Triangle triangle;
-	private final Point startingPoint;
+	private final List<Point> diggingPoints;
+	private JPanel panel;
 
 	public GUIView(Triangle triangle, Point startingPoint) {
 		this.triangle = triangle;
-		this.startingPoint = startingPoint;
+		diggingPoints = new ArrayList<>();
+		diggingPoints.add(startingPoint);
 		displayStart();
 	}
 
@@ -18,14 +22,15 @@ public class GUIView implements View {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
-		JPanel panel = new DrawPanel();
+		panel = new DrawPanel();
 		frame.add(panel);
 		frame.pack();
 	}
 
 	@Override
 	public void displayNewPosition(Point position) {
-
+		diggingPoints.add(position);
+		panel.repaint();
 	}
 
 	class DrawPanel extends JPanel {
@@ -35,17 +40,14 @@ public class GUIView implements View {
 
 		@Override
 		public Dimension getPreferredSize() {
-			return new Dimension(250, 200);
+			return new Dimension(500, 500);
 		}
 
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			drawTriangle(g);
-			g.fillRect(
-					(int) startingPoint.getX(), (int) startingPoint.getY(),
-					1, 1
-			);
+			drawDiggingPoints(g);
 		}
 
 		private void drawTriangle(Graphics g) {
@@ -61,6 +63,10 @@ public class GUIView implements View {
 					(int) triangle.point3().getX(), (int) triangle.point3().getY(),
 					(int) triangle.point1().getX(), (int) triangle.point1().getY()
 			);
+		}
+
+		private void drawDiggingPoints(Graphics g) {
+			diggingPoints.forEach(point -> g.fillRect((int) point.getX(), (int) point.getY(), 1, 1));
 		}
 	}
 }
