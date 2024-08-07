@@ -11,8 +11,8 @@ public class Point {
 
 	public Point calculatePointInBetween(Point other) {
 		return new Point(
-				this.y + other.x / 2,
-				this.y + other.y / 2
+				(this.y + other.x) / 2,
+				(this.y + other.y) / 2
 		);
 	}
 

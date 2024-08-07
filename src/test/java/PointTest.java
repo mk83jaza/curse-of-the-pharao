@@ -47,7 +47,6 @@ class PointTest {
 	}
 
 	@Test
-	@Disabled
 	void pointInBetween() {
 		Point point = new Point(50, 50);
 		assertEquals(new Point(50, 75), point.calculatePointInBetween(new Point(50, 100)));
